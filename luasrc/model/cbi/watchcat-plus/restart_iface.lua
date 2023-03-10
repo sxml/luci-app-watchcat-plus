@@ -9,7 +9,7 @@ s.anonymous = true
 s.addremove = true
 
 -- 是否启用
-enable = e:option(Flag, "enabled", translate("Enabled"))
+enable = s:option(Flag, "enabled", translate("Enabled"))
 enable.rmempty = false
 
 -- 重启接口模式
