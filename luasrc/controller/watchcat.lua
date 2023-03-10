@@ -4,8 +4,8 @@ function index()
    if not nixio.fs.access("/etc/config/watchcat") then
       return
    end
-   entry({"admin", "services", "watchcat"}, alias("admin", "services", "watchcat", "periodic_reboot"),
-    _("Watchcat"), 10)  -- 首页
+   page = entry({"admin", "services", "watchcat"}, alias("admin", "services", "watchcat", "periodic_reboot"),
+    _("Watchcat Plus"), 10)  -- 首页
    page.dependent = true
 	page.acl_depends = { "luci-app-watchcat-plus" }
    entry({"admin", "services", "watchcat", "periodic_reboot"}, cbi("watchcat/periodic_reboot"), _("Periodic reboot"), 10).leaf = true -- "定时重启模式页面" 
