@@ -7,15 +7,19 @@ m = Map("watchcat",
 s = m:section(TypedSection, "watchcat")
 s.anonymous = true
 s.addremove = true
+function s.filter(self, section)
+    return self.map:get(section, "mode") == "restart_iface"
+end
 
 -- 是否启用
 enable = s:option(Flag, "enabled", translate("Enabled"))
 enable.rmempty = false
 
 -- 重启接口模式
-mode = s:option(Value, "mode",
+mode = s:option(ListValue, "mode",
 		translate("Operating mode"),
-		translate("Restart Interface: Restart a network interface if a ping to a specified host fails for a specified duration of time."))
+		translate("Restart a network interface if a ping to a specified host fails for a specified duration of time."))
+mode:value("restart_iface", "restart_iface")
 mode.default = "restart_iface"
 
 -- 周期

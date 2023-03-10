@@ -7,15 +7,19 @@ m = Map("watchcat",
 s = m:section(TypedSection, "watchcat")
 s.anonymous = true
 s.addremove = true
+function s.filter(self, section)
+    return self.map:get(section, "mode") == "periodic_reboot"
+end
 
 -- 是否启用
 enable = s:option(Flag, "enabled", translate("Enabled"))
 enable.rmempty = false
 
 -- 定时重启模式
-mode = s:option(Value, "mode",
+mode = s:option(ListValue, "mode",
 		translate("Operating mode"),
-		translate("Periodic Reboot: Reboot this device after a specified interval of time."))
+		translate("Reboot this device after a specified interval of time."))
+mode:value("periodic_reboot", "periodic_reboot")
 mode.default = "periodic_reboot"
 
 -- 周期

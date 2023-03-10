@@ -7,15 +7,19 @@ m = Map("watchcat",
 s = m:section(TypedSection, "watchcat")
 s.anonymous = true
 s.addremove = true
+function s.filter(self, section)
+    return self.map:get(section, "mode") == "ping_reboot"
+end
 
 -- 是否启用
 enable = s:option(Flag, "enabled", translate("Enabled"))
 enable.rmempty = false
 
 -- Ping重启模式
-mode = s:option(Value, "mode",
+mode = s:option(ListValue, "mode",
 		translate("Operating mode"),
-		translate("Ping Reboot: Reboot this device if a ping to a specified host fails for a specified duration of time."))
+		translate("Reboot this device if a ping to a specified host fails for a specified duration of time."))
+mode:value("ping_reboot", "ping_reboot")
 mode.default = "ping_reboot"
 
 -- 周期

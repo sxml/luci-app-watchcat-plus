@@ -7,15 +7,19 @@ m = Map("watchcat",
 s = m:section(TypedSection, "watchcat")
 s.anonymous = true
 s.addremove = true
+function s.filter(self, section)
+    return self.map:get(section, "mode") == "run_script"
+end
 
 -- 是否启用
 enable = s:option(Flag, "enabled", translate("Enabled"))
 enable.rmempty = false
 
 -- 运行脚本模式
-mode = s:option(Value, "mode",
+mode = s:option(ListValue, "mode",
 		translate("Operating mode"),
-		translate("Run Script: Run a script if a ping to a specified host fails for a specified duration of time."))
+		translate("Run a script if a ping to a specified host fails for a specified duration of time."))
+mode:value("run_script", "run_script")
 mode.default = "run_script"
 
 -- 运行脚本
