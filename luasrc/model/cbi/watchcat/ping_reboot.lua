@@ -1,4 +1,4 @@
-m = Map("system", 
+m = Map("watchcat", 
 	translate("Ping Reboot"), 
 	translate("Watchcat allows configuring a periodic reboot when the " ..
 		  "Internet connection has been lost for a certain period of time."

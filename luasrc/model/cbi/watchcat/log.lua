@@ -4,6 +4,6 @@ log.reset = false
 
 t = log:field(DummyValue, '', '')
 t.rawhtml = true
-t.template = 'watchcat/watchcat_log'
+t.template = 'watchcat-plus/log'
 
 return log
