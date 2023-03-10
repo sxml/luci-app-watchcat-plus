@@ -4,9 +4,14 @@ m = Map("watchcat",
 		  "Internet connection has been lost for a certain period of time."
 		 ))
 
+m:section(SimpleSection).template  = 'watchcat-plus/br'
+
 s = m:section(TypedSection, "watchcat")
 s.anonymous = true
 s.addremove = true
+
+enable = e:option(Flag, "enable", translate("Enable"))
+enable.rmempty = false
 
 -- 四种模式
 mode = s:option(Value, "mode",

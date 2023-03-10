@@ -1,5 +1,5 @@
-m = Map("system", 
-	translate("periodic_reboot"), 
+m = Map("watchcat", 
+	translate("Periodic reboot"), 
 	translate("Watchcat allows configuring a periodic reboot when the " ..
 		  "Internet connection has been lost for a certain period of time."
 		 ))
@@ -13,7 +13,6 @@ mode = s:option(Value, "mode",
 		translate("Operating mode"),
 		translate("Periodic Reboot: Reboot this device after a specified interval of time."))
 mode.default = "periodic_reboot"
-mode.rmempty = true
 
 -- 周期
 period = s:option(Value, "period", 

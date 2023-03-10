@@ -1,4 +1,4 @@
-m = Map("system", 
+m = Map("watchcat", 
 	translate("Run Script"), 
 	translate("Watchcat allows configuring a periodic reboot when the " ..
 		  "Internet connection has been lost for a certain period of time."
@@ -11,10 +11,7 @@ s.addremove = true
 -- 运行脚本模式
 mode = s:option(Value, "mode",
 		translate("Operating mode"),
-		translate("Ping Reboot: Reboot this device if a ping to a specified host fails for a specified duration of time. "..
-				"Periodic Reboot: Reboot this device after a specified interval of time. "..
-				"Restart Interface: Restart a network interface if a ping to a specified host fails for a specified duration of time."..
-				"Run Script: Run a script if a ping to a specified host fails for a specified duration of time."))
+		translate("Run Script: Run a script if a ping to a specified host fails for a specified duration of time."))
 mode.default = "run_script"
 
 -- 运行脚本
