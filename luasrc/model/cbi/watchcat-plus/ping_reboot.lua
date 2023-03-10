@@ -4,16 +4,15 @@ m = Map("watchcat",
 		  "Internet connection has been lost for a certain period of time."
 		 ))
 
-m:section(SimpleSection).template  = 'watchcat-plus/br'
-
 s = m:section(TypedSection, "watchcat")
 s.anonymous = true
 s.addremove = true
 
-enable = e:option(Flag, "enable", translate("Enable"))
+-- 是否启用
+enable = e:option(Flag, "enabled", translate("Enabled"))
 enable.rmempty = false
 
--- 四种模式
+-- Ping重启模式
 mode = s:option(Value, "mode",
 		translate("Operating mode"),
 		translate("Ping Reboot: Reboot this device if a ping to a specified host fails for a specified duration of time."))

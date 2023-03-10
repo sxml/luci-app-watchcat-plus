@@ -8,6 +8,10 @@ s = m:section(TypedSection, "watchcat")
 s.anonymous = true
 s.addremove = true
 
+-- 是否启用
+enable = e:option(Flag, "enabled", translate("Enabled"))
+enable.rmempty = false
+
 -- 运行脚本模式
 mode = s:option(Value, "mode",
 		translate("Operating mode"),
