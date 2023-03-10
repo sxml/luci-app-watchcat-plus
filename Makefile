@@ -6,9 +6,16 @@
 
 include $(TOPDIR)/rules.mk
 
+PKG_NAME:=luci-app-watchcat-plus
+PKG_VERSION:=1.0
+PKG_RELEASE:=202303010
+
+PKG_MAINTAINER:=gngpp <gngppz@gmail.com>
+
+
 LUCI_TITLE:=LuCI Support for Watchcat
 LUCI_DEPENDS:=+watchcat
 
-include ../../luci.mk
+include $(TOPDIR)/feeds/luci/luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature
