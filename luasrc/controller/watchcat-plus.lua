@@ -19,15 +19,9 @@ function index()
 end
 
 function action_logtail()
-	local fs = require "nixio.fs"
-	local log_path = "/var/log/aliyundrive-webdav.log"
 	local e = {}
-	e.running = luci.sys.call("pidof aliyundrive-webdav >/dev/null") == 0
-	if fs.access(log_path) then
-		e.log = luci.sys.exec("tail -n 100 %s | sed 's/\\x1b\\[[0-9;]*m//g'" % log_path)
-	else
-		e.log = ""
-	end
+   e.running = luci.sys.call("service watchcat status") == "running"
+	e.log = luci.sys.exec("logread | tail -n 100 | grep watchcat-plus")
 	luci.http.prepare_content("application/json")
 	luci.http.write_json(e)
 end
