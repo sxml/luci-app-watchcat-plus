@@ -65,3 +65,9 @@ msgid ""
 msgstr ""
 "当重启系统时，WatchCat 将触发一个软重启。在此输入一个非 0 值，如果软重启失败"
 "将会触发一个延迟的硬重启。输入秒数启用，输入 0 禁用"
+
+msgid "Address family for pinging the host"
+msgstr "Ping 主机的地址簇"
+
+msgid "Ping Packet Size"
+msgstr "Ping 包大小"
