@@ -4,6 +4,10 @@ m = Map("watchcat",
 		  "Internet connection has been lost for a certain period of time."
 		 ))
 
+		m.on_after_commit = function(self)
+			luci.sys.exec("service watchcat reload")
+		end
+		
 s = m:section(TypedSection, "watchcat")
 s.anonymous = true
 s.addremove = true
