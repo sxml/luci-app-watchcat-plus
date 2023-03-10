@@ -20,7 +20,8 @@ end
 
 function action_logtail()
 	local e = {}
-	e.log = luci.sys.exec("logread | grep watchcat-plus")
+   e.running = luci.sys.call("service watchcat status") == "running"
+	e.log = luci.sys.exec("logread | tail -n 100 | grep watchcat-plus")
 	luci.http.prepare_content("application/json")
 	luci.http.write_json(e)
 end

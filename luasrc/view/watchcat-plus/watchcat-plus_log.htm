@@ -5,6 +5,9 @@
 	const LOG_URL = '<%=luci.dispatcher.build_url("admin", "services", "watchcat-plus", "logtail")%>';
 	XHR.poll(1, LOG_URL, null, (x, d) => {
 		let logview = document.getElementById("logview");
+		if (!d.running) {
+			XHR.halt();
+		}
 		logview.value = d.log;
 		logview.scrollTop = logview.scrollHeight;
 	});
