@@ -75,15 +75,35 @@ pingsize.default = 'standard';
 -- 接口
 interface = s:option(Value, "interface",
 				translate('Restart Interface'),
-				translate('Interface to monitor and/or restart'),
-				translate('<i>Applies to Ping Reboot, Restart Interface, and Run Script modes</i> <br /> Specify the interface to monitor and react if a ping over it fails.'));
+				translate("Interface to monitor and/or restart.<br/><br/><i>Applies to Ping Reboot, Restart Interface, and Run Script modes</i> <br /> Specify the interface to monitor and react if a ping over it fails.")
+			);
 device_table = luci.sys.net.devices();
-if table then
+if device_table ~= nil then
 	for k, v in ipairs(device_table) do
 		if v ~= "lo" then
 			interface:value(v, v)
 		end
 	end 
 end
+
+mmifacename = s:option(Value, 'mmifacename',
+					translate('Name of ModemManager Interface'), 
+					translate("Applies to Ping Reboot and Restart Interface modes</i> <br /> If using ModemManager, \
+								you can have Watchcat restart your ModemManger interface by specifying its name."));
+mmifacename.rmempty = true;	
+mmifacename.optional = true;
+device_info = luci.sys.net.devices();
+if device_info ~= nil then
+	for k, v in ipairs(device_info) do
+		if v ~= "lo" then
+			mmifacename:value(k, v)
+		end
+	end 
+end
+
+unlockbands = s:option(Value, 'unlockbands', 
+					translate('Unlock Modem Bands'), 
+					translate('If using ModemManager, then before restarting the interface, set the modem to be allowed to use any band.'));
+unlockbands.default = '0';
 
 return m
