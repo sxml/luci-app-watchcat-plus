@@ -19,7 +19,7 @@ function index()
 end
 
 function action_logread()
-   local e = luci.sys.exec("logread | grep watchcat-plus")
+   local e = luci.sys.exec("logread | grep watchcat")
       if e == nil then
          e = ""
       end
