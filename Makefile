@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2008-2014 The LuCI Team <luci@lists.subsignal.org>
+# Copyright (C) 2008-2014 The LuCI gngpp <gngppz@gmail.com>
 #
 # This is free software, licensed under the Apache License, Version 2.0 .
 #
