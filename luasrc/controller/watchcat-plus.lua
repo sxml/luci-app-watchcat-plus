@@ -10,10 +10,10 @@ function index()
    page.dependent = true
 	page.acl_depends = { "luci-app-watchcat-plus" }
    
-   entry({"admin", "services", "watchcat-plus", "periodic_reboot"}, cbi("watchcat-plus/periodic_reboot"), _("Periodic reboot"), 10).leaf = true -- "定时重启模式页面" 
-   entry({"admin", "services", "watchcat-plus", "ping_reboot"}, cbi("watchcat-plus/ping_reboot"), _("Ping reboot"), 20).leaf = true -- "Ping重启模式页面" 
-   entry({"admin", "services", "watchcat-plus", "restart_iface"}, cbi("watchcat-plus/restart_iface"), _("Restart interface"), 30).leaf = true -- "重启接口模式页面" 
-   entry({"admin", "services", "watchcat-plus", "run_script"}, cbi("watchcat-plus/run_script"), _("Run Script"), 40).leaf = true -- "运行脚本模式界面" 
+   entry({"admin", "services", "watchcat-plus", "periodic_reboot"}, cbi("watchcat-plus/periodic_reboot"), translate("Periodic Reboot"), 10).leaf = true -- "定时重启模式页面" 
+   entry({"admin", "services", "watchcat-plus", "ping_reboot"}, cbi("watchcat-plus/ping_reboot"), translate("Ping Reboot"), 20).leaf = true -- "Ping重启模式页面" 
+   entry({"admin", "services", "watchcat-plus", "restart_iface"}, cbi("watchcat-plus/restart_iface"), translate("Restart Interface"), 30).leaf = true -- "重启接口模式页面" 
+   entry({"admin", "services", "watchcat-plus", "run_script"}, cbi("watchcat-plus/run_script"), translate("Run Script"), 40).leaf = true -- "运行脚本模式界面" 
    entry({"admin", "services", "watchcat-plus", "log"}, form("watchcat-plus/log"), _("Log"), 50).leaf = true -- 日志页面
    entry({"admin", "services", "watchcat-plus", "logread"}, call("action_logread"), nil).dependent = false -- 日志采集
 end

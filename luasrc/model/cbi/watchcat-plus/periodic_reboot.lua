@@ -22,7 +22,7 @@ enable.rmempty = false
 mode = s:option(ListValue, "mode",
 		translate("Mode"),
 		translate("Periodic Reboot: Reboot this device after a specified interval of time."))
-mode:value("periodic_reboot", "periodic_reboot")
+mode:value("periodic_reboot", "Periodic Reboot"),
 mode.default = "periodic_reboot"
 
 -- 周期

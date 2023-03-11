@@ -11,6 +11,18 @@ msgstr ""
 msgid "Watchcat"
 msgstr "Watchcat"
 
+msgid "Periodic Reboot"
+msgstr "定时重启"
+
+msgid "Ping Reboot"
+msgstr "Ping 重启"
+
+msgid "Restart Interface"
+msgstr "重启接口"
+
+msgid "Run Script"
+msgstr "执行脚本"
+
 msgid ""
 "Here you can set up several checks and actions to take in the event that a "
 "host becomes unreachable. Click the <b>Add</b> button at the bottom to set "
@@ -39,7 +51,9 @@ msgstr "执行脚本：如果在指定的时间内，ping 指定主机始终失�
 msgid "Script to run"
 msgstr "要执行的脚本"
 
-msgid "Script to run when the host has not responded for the specified duration of time. The script is passed the interface name as $1"
+msgid ""
+"Script to run when the host has not responded for the specified duration of "
+"time. The script is passed the interface name as $1"
 msgstr "当特定主机在指定的时间内未回复时要执行的脚本。脚本将接口名称作为 $1 传递"
 
 msgid "Period"
@@ -117,8 +131,29 @@ msgstr "Ping 主机的地址簇"
 msgid "Ping Packet Size"
 msgstr "Ping 包大小"
 
+msgid "Small: 1 byte"
+msgstr "小：1 字节"
+
+msgid "Standard: 56 bytes"
+msgstr "标准：56 字节"
+
+msgid "Windows: 32 bytes"
+msgstr "Windows：32 字节"
+
+msgid "Big: 248 bytes"
+msgstr "大：248 字节"
+
+msgid "Huge: 1492 bytes"
+msgstr "巨大：1492 字节"
+
+msgid "Jumbo: 9000 bytes"
+msgstr "巨无霸：9000 字节"
+
 msgid "Forced reboot delay"
 msgstr "强制重启延时"
+
+msgid "Interface"
+msgstr "接口"
 
 msgid "Restart Interface"
 msgstr "重启接口"

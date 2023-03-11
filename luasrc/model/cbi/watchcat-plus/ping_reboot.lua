@@ -22,7 +22,7 @@ enable.rmempty = false
 mode = s:option(ListValue, "mode",
 		translate("Mode"),
 		translate("Ping Reboot: Reboot this device if a ping to a specified host fails for a specified duration of time."))
-mode:value("ping_reboot", "ping_reboot")
+mode:value("ping_reboot", translate("Ping Reboot"))
 mode.default = "ping_reboot"
 
 -- 周期
