@@ -8,4 +8,5 @@ uci -q batch <<-EOF >/dev/null
 EOF
 
 rm -f /tmp/luci-indexcache
+rm -rf /tmp/luci-modulecache
 exit 0
