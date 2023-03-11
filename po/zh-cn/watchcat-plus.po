@@ -173,12 +173,12 @@ msgstr ""
 "败的秒数或使用 0 来禁用强制重启延迟。"
 
 msgid ""
-msgstr "要监视和/或重启的接口"
+msgstr ""
 
 msgid ""
 "Interface to monitor and/or restart.<br/><br/><i>Applies to Ping Reboot, Restart Interface, and Run Script modes</i> <br /"
 "> Specify the interface to monitor and react if a ping over it fails."
-msgstr "<i>应用于 Ping重启、重启接口 和 执行脚本 模式</i> <br />指定要监视的接口并在 "
+msgstr "要监视和/或重启的接口。<br/><br/><i>应用于 Ping重启、重启接口 和 执行脚本 模式</i> <br />指定要监视的接口并在 "
 "ping 失败时做出反应。"
 
 msgid "Name of ModemManager Interface"
