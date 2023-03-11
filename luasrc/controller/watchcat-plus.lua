@@ -20,6 +20,9 @@ end
 
 function action_logread()
    local e = luci.sys.exec("logread | grep watchcat-plus")
+      if e == nil then
+         e = ""
+      end
    luci.http.prepare_content("application/json")
-   luci.http.write(e);
+   luci.http.write_json(e);
 end

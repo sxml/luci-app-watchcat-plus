@@ -22,7 +22,7 @@ enable.rmempty = false
 mode = s:option(ListValue, "mode",
 		translate("Mode"),
 		translate("Restart Interface: Restart a network interface if a ping to a specified host fails for a specified duration of time."))
-mode:value("restart_iface", "Restart Interface")
+mode:value("restart_iface", translate("Restart Interface"))
 mode.default = "restart_iface"
 
 -- 周期

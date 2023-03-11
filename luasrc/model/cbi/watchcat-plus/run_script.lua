@@ -22,14 +22,14 @@ enable.rmempty = false
 mode = s:option(ListValue, "mode",
 		translate("Mode"),
 		translate("Run Script: Run a script if a ping to a specified host fails for a specified duration of time."))
-mode:value("run_script", "Run Script")
+mode:value("run_script", translate("Run Script"))
 mode.default = "run_script"
 
 -- 运行脚本
 script = s:option(Value, "script", translate("Script to run"))
 script.datatype = "file"
 script.default = "/etc/watchcat.user.sh"
-script.description = translate("Script to run when the host has not responded for the specified duration of "
+script.description = translate("Script to run when the host has not responded for the specified duration of " ..
 "time. The script is passed the interface name as $1")
 
 -- 周期
@@ -48,8 +48,8 @@ period.default = '6h'
 
 -- ping 主机
 pinghosts = s:option(Value, "pinghosts", 
-translate("Ping host"),
-translate("Host address to ping"))
+translate("Host To Check"),
+translate("IP address or hostname to ping."))
 pinghosts.datatype = "host(1)"
 pinghosts.default = "8.8.8.8"
 
