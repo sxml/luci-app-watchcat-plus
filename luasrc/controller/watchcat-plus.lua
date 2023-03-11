@@ -15,11 +15,11 @@ function index()
    entry({"admin", "services", "watchcat-plus", "restart_iface"}, cbi("watchcat-plus/restart_iface"), _("Restart interface"), 30).leaf = true -- "重启接口模式页面" 
    entry({"admin", "services", "watchcat-plus", "run_script"}, cbi("watchcat-plus/run_script"), _("Run Script"), 40).leaf = true -- "运行脚本模式界面" 
    entry({"admin", "services", "watchcat-plus", "log"}, form("watchcat-plus/log"), _("Log"), 50).leaf = true -- 日志页面
-   entry({"admin", "services", "watchcat-plus", "logtail"}, call("action_logtail"), nil).dependent = false -- 日志采集
+   entry({"admin", "services", "watchcat-plus", "logread"}, call("action_logread"), nil).dependent = false -- 日志采集
 end
 
-function action_logtail()
-   local e = luci.sys.exec("logread | tail -n 200  | grep watchcat-plus")
+function action_logread()
+   local e = luci.sys.exec("logread | grep watchcat-plus")
    luci.http.prepare_content("application/json")
    luci.http.write(e);
 end

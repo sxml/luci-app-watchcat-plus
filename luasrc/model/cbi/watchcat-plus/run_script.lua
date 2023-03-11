@@ -1,10 +1,9 @@
 m = Map("watchcat", 
-	translate("Run Script"), 
-	translate("Watchcat allows configuring a periodic reboot when the " ..
-		  "Internet connection has been lost for a certain period of time."
+	"", 
+	translate("Here you can set up several checks and actions to take in the event that a host becomes unreachable. \
+	Click the <b>Add</b> button at the bottom to set up more than one action."
 		 ))
-
-		m.on_after_commit = function(self)
+		 m.on_after_commit = function(self)
 			luci.sys.exec("service watchcat reload")
 		end
 		
@@ -21,8 +20,8 @@ enable.rmempty = false
 
 -- 运行脚本模式
 mode = s:option(ListValue, "mode",
-		translate("Operating mode"),
-		translate("Run a script if a ping to a specified host fails for a specified duration of time."))
+		translate("Mode"),
+		translate("Run Script: Run a script if a ping to a specified host fails for a specified duration of time."))
 mode:value("run_script", "run_script")
 mode.default = "run_script"
 
@@ -35,12 +34,15 @@ script.description = translate("Script to run when the host has not responded fo
 -- 周期
 period = s:option(Value, "period", 
 		  translate("Period"),
-		  translate("In periodic mode, it defines the reboot period. " ..
-			    "In internet mode, it defines the longest period of " .. 
-			    "time without internet access before a reboot is engaged." ..
-			    "Default unit is seconds, you can use the " ..
-			    "suffix 'm' for minutes, 'h' for hours or 'd' " ..
-			    "for days"))
+		  translate("In Periodic Reboot mode, it defines how often to reboot. <br /> \
+				In Ping Reboot mode, it defines the longest period of \
+				time without a reply from the Host To Check before a reboot is engaged. <br /> \
+				In Network Restart or Run Script mode, it defines the longest period of \
+				time without a reply from the Host to Check before the interface is restarted or the script is run. \
+				<br /><br />The default unit is seconds, without a suffix, but you can use the \
+				suffix <b>m</b> for minutes, <b>h</b> for hours or <b>d</b> \
+				for days. <br /><br />Examples:<ul><li>10 seconds would be: <b>10</b> or <b>10s</b></li><li>5 minutes would be: <b>5m</b></li><li> \
+				1 hour would be: <b>1h</b></li><li>1 week would be: <b>7d</b></li><ul>"))
 period.default = '6h'
 
 -- ping 主机
@@ -60,11 +62,10 @@ addressfamily.default = "any";
 
 -- ping周期
 pingperiod = s:option(Value, "pingperiod", 
-		      translate("Ping period"),
-		      translate("How often to check internet connection. " ..
-				"Default unit is seconds, you can you use the " ..
-				"suffix 's' for seconds, suffix 'm' for minutes, 'h' for hours or 'd' " ..
-				"for days"))
+		      translate("Check Interval"),
+		      translate("How often to ping the host specified above. \
+			  <br /><br />The default unit is seconds, without a suffix, but you can use the suffix <b>m</b> for minutes, <b>h</b> for hours or <b>d</b> for days. <br /><br /> \
+			  Examples:<ul><li>10 seconds would be: <b>10</b> or <b>10s</b></li><li>5 minutes would be: <b>5m</b></li><li>1 hour would be: <b>1h</b></li><li>1 week would be: <b>7d</b></li><ul>""))
 pingperiod.default = "30s"
 
 -- ping 包大小
@@ -79,8 +80,9 @@ pingsize.default = 'standard';
 
 -- 接口
 interface = s:option(Value, "interface",
-				translate('Interface'),
-				translate('Applies to Ping Reboot, Restart Interface, and Run Script modes Specify the interface to monitor and react if a ping over it fails.'));
+				translate('Restart Interface'),
+				translate('Interface to monitor and/or restart'),
+				translate('<i>Applies to Ping Reboot, Restart Interface, and Run Script modes</i> <br /> Specify the interface to monitor and react if a ping over it fails.'));
 device_table = luci.sys.net.devices();
 if table then
 	for k, v in ipairs(device_table) do
