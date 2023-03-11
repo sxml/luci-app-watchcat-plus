@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-watchcat-plus
-PKG_VERSION:=1.1
+PKG_VERSION:=1.2
 PKG_RELEASE:=202303011
 
 PKG_MAINTAINER:=gngpp <gngppz@gmail.com>
