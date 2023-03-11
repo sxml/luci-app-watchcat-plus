@@ -16,3 +16,4 @@ git clone https://github.com/gngpp/luci-app-watchcat-plus.git package/luci-app-w
 make menuconfig # choose LUCI -> Applications -> luci-app-watchcat-plus
 make V=sc -j1
 ```
+![image](https://user-images.githubusercontent.com/51810656/224473054-920784b1-bb87-4771-bcb5-3dd96d3778be.png)
