@@ -1,3 +1,4 @@
+require("luci.tools.webadmin")
 m = Map("watchcat", 
 	"", 
 	translate("Here you can set up several checks and actions to take in the event that a host becomes unreachable. \
@@ -100,6 +101,7 @@ if device_info ~= nil then
 		end
 	end 
 end
+luci.tools.webadmin.cbi_add_networks(mmifacename)
 
 unlockbands = s:option(Value, 'unlockbands', 
 					translate('Unlock Modem Bands'), 
