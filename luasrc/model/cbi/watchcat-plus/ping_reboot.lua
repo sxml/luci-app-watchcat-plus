@@ -83,10 +83,10 @@ forcedelay.default = "1m"
 -- 接口
 interface = s:option(Value, "interface",
 				translate('Restart Interface'),
-				translate('Interface to monitor and/or restart'),
-				translate('<i>Applies to Ping Reboot, Restart Interface, and Run Script modes</i> <br /> Specify the interface to monitor and react if a ping over it fails.'));
+				translate("Interface to monitor and/or restart.<br/><br/><i>Applies to Ping Reboot, Restart Interface, and Run Script modes</i> <br /> Specify the interface to monitor and react if a ping over it fails.")
+			);
 device_table = luci.sys.net.devices();
-if table then
+if device_table ~= nil then
 	for k, v in ipairs(device_table) do
 		if v ~= "lo" then
 			interface:value(v, v)
