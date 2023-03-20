@@ -15,10 +15,6 @@ function s.filter(self, section)
     return self.map:get(section, "mode") == "restart_iface"
 end
 
--- 是否启用
-enable = s:option(Flag, "enabled", translate("Enabled"))
-enable.rmempty = false
-
 -- 重启接口模式
 mode = s:option(ListValue, "mode",
 		translate("Mode"),

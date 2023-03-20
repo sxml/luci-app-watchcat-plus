@@ -14,10 +14,6 @@ function s.filter(self, section)
     return self.map:get(section, "mode") == "run_script"
 end
 
--- 是否启用
-enable = s:option(Flag, "enabled", translate("Enabled"))
-enable.rmempty = false
-
 -- 运行脚本模式
 mode = s:option(ListValue, "mode",
 		translate("Mode"),

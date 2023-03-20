@@ -14,10 +14,6 @@ function s.filter(self, section)
     return self.map:get(section, "mode") == "periodic_reboot"
 end
 
--- 是否启用
-enable = s:option(Flag, "enabled", translate("Enabled"))
-enable.rmempty = false
-
 -- 定时重启模式
 mode = s:option(ListValue, "mode",
 		translate("Mode"),
