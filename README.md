@@ -17,7 +17,6 @@ https://openwrt.org/docs/guide-user/advanced/watchcat
 rm -rf feeds/packages/utils/watchcat
 svn co https://github.com/openwrt/packages/trunk/utils/watchcat feeds/packages/utils/watchcat
 
-# 克隆 luci-app-watchcat-plus
 git clone https://github.com/gngpp/luci-app-watchcat-plus.git package/luci-app-watchcat-plus
 make menuconfig # choose LUCI -> Applications -> luci-app-watchcat-plus
 make V=sc -j1
