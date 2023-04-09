@@ -1,5 +1,5 @@
 # luci-app-watchcat-plus
-luci-app-watchcat-plus 是从官方js版本的[luci-app-watchcat](https://github.com/openwrt/luci/tree/master/applications/luci-app-watchcat)移植过来的，加入日志查看，适用于luci lua版本的openwrt分支。
+luci-app-watchcat-plus 由官方js版本的[luci-app-watchcat](https://github.com/openwrt/luci/tree/master/applications/luci-app-watchcat)移植，加入日志查看，适用于luci lua版本的openwrt分支。
 需要搭配官方最新版本[watchcat](https://github.com/openwrt/packages/tree/master/utils/watchcat)使用
 
 ### 功能
